@@ -102,6 +102,7 @@ return {
 				formatters_by_ft = {
 					lua = { "stylua" },
 					cs = { "csharpier" },
+					python = { "black" },
 				},
 				formatters = {
 					csharpier = {

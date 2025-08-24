@@ -13,13 +13,64 @@ return {
 			local cmp_nvim_lsp = require("cmp_nvim_lsp")
 			local cmp = require("cmp")
 
-			-- Enable LSP
+			-- C# LSP
 			lspconfig.omnisharp.setup({
 				cmd = { "omnisharp", "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 				on_attach = function(client, bufnr)
 					-- ... (your keybindings and other on_attach logic)
 				end,
 				capabilities = cmp_nvim_lsp.default_capabilities(),
+			})
+
+			lspconfig.emmet_ls.setup({
+				capabilities = capabilities,
+				filetypes = {
+					"css",
+					"eruby",
+					"html",
+					"javascript",
+					"javascriptreact",
+					"less",
+					"sass",
+					"scss",
+					"svelte",
+					"pug",
+					"typescriptreact",
+					"vue",
+					"xml",
+				},
+				init_options = {
+					html = {
+						options = {
+							["bem.enabled"] = true,
+							["jsx.enabled"] = true,
+							["markup.attributes"] = {
+								["class*"] = "className",
+								["for"] = "htmlFor",
+							},
+						},
+					},
+					css = {
+						options = {
+							["css.fuzzySearchMinScore"] = 0.3,
+						},
+					},
+					javascript = {
+						options = {
+							["jsx.enabled"] = true,
+						},
+					},
+					typescriptreact = {
+						options = {
+							["jsx.enabled"] = true,
+						},
+					},
+					javascriptreact = {
+						options = {
+							["jsx.enabled"] = true,
+						},
+					},
+				},
 			})
 
 			-- Setup nvim-cmp

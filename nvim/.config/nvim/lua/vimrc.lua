@@ -8,6 +8,9 @@ vim.g.mapleader = " "
 -- Use system clipboard (install xclip to work)
 vim.opt.clipboard = "unnamedplus"
 
+-- Set conceal level for obsidian.nvim
+vim.opt.conceallevel = 1
+
 -- Exit insert mode with jk
 vim.keymap.set("i", "jk", "<Esc>", { noremap = true, silent = true }) -- jk to exit insert mode
 
@@ -92,6 +95,9 @@ vim.opt.tabstop = 2
 vim.opt.softtabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.expandtab = true
+
+-- Save file with Ctrl+S in normal mode
+vim.keymap.set("n", "<C-s>", ":w<CR>", { desc = "Save file" })
 
 -- Format on save with Conform
 vim.api.nvim_create_autocmd("BufWritePre", {
