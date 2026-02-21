@@ -12,11 +12,9 @@ if not vim.loop.fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Load utils (custom functions)
-local diagnostics = require("utils.diagnostics")
-vim.keymap.set("n", "<leader>dc", diagnostics.copy_diagnostic, { desc = "Copy diagnostic to clipboard" })
-
 -- Load Vimrc
 require("vimrc")
 -- Load plugins
 require("lazy").setup("plugins")
+-- Load configs
+require("config.lspconfig")

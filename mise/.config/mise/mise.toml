@@ -1,2 +1,3 @@
 [tools]
 dotnet = "9"
+node = "latest"

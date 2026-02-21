@@ -6,7 +6,6 @@ return {
 			require("conform").setup({
 				formatters_by_ft = {
 					lua = { "stylua" },
-					cs = { "csharpier" },
 					python = { "black" },
 					javascript = { "prettier" },
 					typescript = { "prettier" },
@@ -16,16 +15,7 @@ return {
 					markdown = { "prettier" },
 					javascriptreact = { "prettier" },
 					typescriptreact = { "prettier" },
-				},
-				formatters = {
-					csharpier = {
-						command = "csharpier",
-						args = function(self, ctx)
-							return { "format", ctx.filename }
-						end,
-						stdin = false,
-					},
-				},
+				}
 			})
 		end,
 	},

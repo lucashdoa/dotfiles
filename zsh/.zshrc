@@ -13,7 +13,7 @@ fi
 
 
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$HOME/.opencode/bin:$HOME/.local/share/mise/installs/node/25.2.1/bin/npx:$PATH
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
@@ -129,4 +129,7 @@ source $ZSH/oh-my-zsh.sh
 bindkey '^ ' autosuggest-accept
 
 # Created by `pipx` on 2025-07-29 02:22:43
-export PATH="$PATH:/home/lucas/.local/bin"
+export PATH=$PATH:/home/lucas/.local/bin
+
+# Init Mise
+eval "$(mise activate zsh)"

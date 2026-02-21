@@ -1,7 +1,7 @@
 {
   "position": "top",
-  "modules-left": ["hyprland/workspaces"],
-  "modules-center": ["hyprland/window"],
+  "modules-left": ["niri/workspaces"],
+  "modules-center": ["niri/window"],
   "modules-right": ["network", "pulseaudio", "battery", "clock"],
   "clock": {
   "format": "<span foreground='#f5c2e7'>   </span>{:%a %b %d %I:%M%p}",
@@ -37,6 +37,21 @@
           "default": ["", "", " "]
       },
       "on-click": "pwvucontrol"
+  },
+  "niri/workspaces": {
+      "format": "{name}",
+      "format-icons": {
+          "active": "",
+          "default": ""
+      }
+  },
+  "niri/window": {
+      "format": "{}",
+      "max-length": 50,
+      "rewrite": {
+          "(.*) - Mozilla Firefox": "🌐 $1",
+          "(.*) - kitty": "🐱 $1"
+      }
   }
 }
 
